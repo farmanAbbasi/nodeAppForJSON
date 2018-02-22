@@ -35,6 +35,7 @@ function sendAll(request, response) {
 app.get('/add/:name/:value?', addMethod);//? is used to make it optional
 
 function addMethod(request, response) {
+   
     var data = request.params;
     var naam = data.name;
     var keemat = Number(data.value);
@@ -50,6 +51,8 @@ function addMethod(request, response) {
         msg: "great job man"
     }
     response.send(reply);
+    
+    
 }
 
 
@@ -58,8 +61,8 @@ function addMethod(request, response) {
 
 app.post('/analyze', analyzeThis);
 function analyzeThis(request, response) {
-    console.log(request.body);//request.body is used after installing, importing and copying 2 lines for body parser
-    response.send("thank you!!!");
+    console.log(request.body);//request.body is used after installing, importing body parser
+   // response.end("thank you!!!");
 }
 
 
